@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "gulp serve-dev",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "gulp",
+            "windows": {
+                "runtimeExecutable": "gulp.cmd"
+            },
+            "runtimeArgs": [
+                "serve-dev"
+            ],
+            "port": 5858
+        }
+    ]
+}

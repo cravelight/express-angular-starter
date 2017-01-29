@@ -1,0 +1,10 @@
+# /node_modules/* and /bower_components/* ignored by default
+
+# Ignore distribution files since we get better error messages on the source
+build/*
+
+# Ignore 3rd party libs since they are generally a mess
+
+
+# Ignore any output from build or test results
+report/*

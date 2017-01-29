@@ -1,0 +1,58 @@
+# ------------------------------------
+# Dependency directories
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+# ------------------------------------
+
+node_modules/
+bower_components/
+
+
+# ------------------------------------
+# Build Output
+# ------------------------------------
+
+build/
+report/
+
+
+# ------------------------------------
+# Operating Systems
+# ------------------------------------
+
+# OS X
+.DS_Store*
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
+
+
+# ------------------------------------
+# Runtime Data
+# ------------------------------------
+
+# Logs
+logs
+*.log
+
+# other
+.tmp
+*.env
+
+
+# ------------------------------------
+# Editor Related
+# ------------------------------------
+
+_workspaces/
+TODO
+*.todo
+.idea/
+.vscode/chrome
