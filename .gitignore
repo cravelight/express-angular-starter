@@ -45,6 +45,7 @@ logs
 # other
 .tmp
 *.env
+process.json
 
 
 # ------------------------------------
