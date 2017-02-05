@@ -13,8 +13,7 @@
   }
 
   var config = {
-    appErrorPrefix: '[srclogistics-tms Error] ',
-    appTitle: 'srclogistics-tms'
+    appErrorPrefix: '[Error] '
   };
 
   core.value('config', config);

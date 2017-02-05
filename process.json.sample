@@ -1,0 +1,18 @@
+Sample process.json file for PM2 node process manager.
+In practice we don't want to commit this file to source
+since it contains environment variable which are likely
+to store super secret stuff in them.
+{
+  "apps": [
+    {
+      "name": "src-tms",
+      "script": "./src/server/app.js",
+      "watch": false,
+      "env": {
+        "NODE_ENV": "build",
+        "PORT": 8001,
+        "YOUR_CUSTOM_VAR_GOES_HERE": 42
+      }
+    }
+  ]
+}

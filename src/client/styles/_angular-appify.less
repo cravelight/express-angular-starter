@@ -1,0 +1,57 @@
+// ---------------------
+// Fix/Support Angular Oddities
+// ---------------------
+
+// Issue with empty hrefs per http://angular-ui.github.io/bootstrap/#!#getting_started
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+// .ng-cloak https://docs.angularjs.org/api/ng/directive/ngCloak
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
+/* Fixed header, sticky footer styles
+-------------------------------------------------- */
+// override in styles.less
+@fixed-header-height: 70px;
+@sticky-footer-height: 60px;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  padding-top: @fixed-header-height;    // padding top by header height
+  margin-bottom: @sticky-footer-height; // margin bottom by footer height
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: @sticky-footer-height; // set the fixed height of the footer here
+}
+/* -----------------------------------------------
+ * end Fixed header, sticky footer styles */
+
+
+
+/* IE10 viewport hack for Surface/desktop Windows 8 bug
+ * Copyright 2014-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+-------------------------------------------------- */
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }
+/* -----------------------------------------------
+ * end IE10 viewport hack */
+
+
+
+/* Focus outlines are usually annoying
+-------------------------------------------------- */
+:focus { outline: none; }
+::-moz-focus-inner { border: 0; }
+/* -----------------------------------------------
+ * end focus outline squashing */
+

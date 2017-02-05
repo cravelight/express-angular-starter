@@ -3,7 +3,7 @@
 
   angular.module('app', [
     'app.core',
-    'app.widgets',
+    'app.components',
     'app.admin',
     'app.dashboard',
     'app.layout'

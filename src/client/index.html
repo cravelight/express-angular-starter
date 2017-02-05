@@ -1,59 +1,46 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html lang="en" ng-app="app">
 
 <head>
-  <style>
-    /* This helps the ng-show/ng-hide animations start at the right place. */
-    /* Since Angular has this but needs to load, this gives us the class early. */
-    
-    .ng-hide {
-      display: none!important;
-    }
-  </style>
-  <title ng-bind="title">
-    srclogistics-tms
-  </title>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-  <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title ng-bind="title"></title>
+    <base href="/">
 
-  <!-- build:css styles/lib.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
+    <!-- Get a jumpstart on Angular show/hide magic -->
+    <style>.ng-hide { display: none!important; }</style>
 
-  <!-- build:css styles/app.css -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="/.tmp/styles.css">
-  <!-- endinject -->
-  <!-- endbuild -->
+    <!-- build:css styles/lib.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/app.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/styles.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-
 <body>
-  <div>
-    <div ng-include="'app/layout/shell.html'"></div>
-    <div id="splash-page" ng-show="showSplash">
-      <div class="page-splash">
-        <div class="page-splash-message">
-          srclogistics-tms
-        </div>
-        <div class="progress progress-striped active page-progress-bar">
-          <div class="bar"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div ng-include="'app/areas/layout/shell.html'"></div>
 
   <!-- build:js js/lib.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
-  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
   <script src="/bower_components/moment/moment.js"></script>
   <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="/bower_components/toastr/toastr.js"></script>
@@ -65,37 +52,53 @@
   <!-- build:js js/app.js -->
   <!-- inject:js -->
   <script src="/src/client/app/app.module.js"></script>
-  <script src="/src/client/app/admin/admin.module.js"></script>
+  <script src="/src/client/app/areas/admin/admin.module.js"></script>
+  <script src="/src/client/app/areas/dashboard/dashboard.module.js"></script>
+  <script src="/src/client/app/areas/layout/layout.module.js"></script>
   <script src="/src/client/app/blocks/exception/exception.module.js"></script>
   <script src="/src/client/app/blocks/logger/logger.module.js"></script>
   <script src="/src/client/app/blocks/router/router.module.js"></script>
+  <script src="/src/client/app/components/components.module.js"></script>
+  <script src="/src/client/app/core/core-ui.module.js"></script>
   <script src="/src/client/app/core/core.module.js"></script>
-  <script src="/src/client/app/dashboard/dashboard.module.js"></script>
-  <script src="/src/client/app/layout/layout.module.js"></script>
-  <script src="/src/client/app/widgets/widgets.module.js"></script>
-  <script src="/src/client/app/admin/admin.controller.js"></script>
-  <script src="/src/client/app/admin/admin.route.js"></script>
+  <script src="/src/client/app/areas/admin/admin.controller.js"></script>
+  <script src="/src/client/app/areas/admin/admin.route.js"></script>
+  <script src="/src/client/app/areas/dashboard/dashboard.controller.js"></script>
+  <script src="/src/client/app/areas/dashboard/dashboard.route.js"></script>
+  <script src="/src/client/app/areas/layout/shell.controller.js"></script>
   <script src="/src/client/app/blocks/exception/exception-handler.provider.js"></script>
   <script src="/src/client/app/blocks/exception/exception.js"></script>
   <script src="/src/client/app/blocks/logger/logger.js"></script>
   <script src="/src/client/app/blocks/router/router-helper.provider.js"></script>
+  <script src="/src/client/app/components/navbar/navbar.component.js"></script>
   <script src="/src/client/app/core/config.js"></script>
   <script src="/src/client/app/core/constants.js"></script>
   <script src="/src/client/app/core/core.route.js"></script>
   <script src="/src/client/app/core/dataservice.js"></script>
-  <script src="/src/client/app/dashboard/dashboard.controller.js"></script>
-  <script src="/src/client/app/dashboard/dashboard.route.js"></script>
-  <script src="/src/client/app/layout/ht-sidebar.directive.js"></script>
-  <script src="/src/client/app/layout/ht-top-nav.directive.js"></script>
-  <script src="/src/client/app/layout/shell.controller.js"></script>
-  <script src="/src/client/app/layout/sidebar.controller.js"></script>
-  <script src="/src/client/app/widgets/ht-img-person.directive.js"></script>
-  <script src="/src/client/app/widgets/ht-widget-header.directive.js"></script>
   <!-- endinject -->
 
   <!-- inject:templates:js -->
   <!-- endinject -->
   <!-- endbuild -->
+  <script>
+  /* IE10 viewport hack for Surface/desktop Windows 8 bug
+  * Copyright 2014-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  -------------------------------------------------- */
+  (function () {
+    'use strict';
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+      var msViewportStyle = document.createElement('style');
+      msViewportStyle.appendChild(
+        document.createTextNode(
+          '@-ms-viewport{width:auto!important}'
+        )
+      );
+      document.querySelector('head').appendChild(msViewportStyle);
+    }
+  })();
+  /* -----------------------------------------------
+  * end IE10 viewport hack */
+  </script>
 </body>
-
 </html>

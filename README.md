@@ -11,7 +11,6 @@ to bring them in line with current practices.
 
 
 ## Common Gulp Tasks
------
 
 ### Linting
  - Run code analysis using `gulp vet`. This runs eslint and plato.
@@ -30,8 +29,9 @@ to bring them in line with current practices.
 ### Running the optimized code
  - Run the optimize project from the build folder with `gulp serve-build`
 
+
+
 ## Exploring the Application
------
 
 ### Structure
 The structure also contains a gulpfile.js and a server folder. The server is there just so we can serve the app using node. Feel free to use any server you wish.
@@ -44,35 +44,12 @@ The structure also contains a gulpfile.js and a server folder. The server is the
 ### The Modules
 The app has 4 feature modules and depends on a series of external modules and custom but cross-app modules
 
-```
-app --> [
-        app.admin --> [
-            app.core,
-            app.widgets
-        ],
-        app.dashboard --> [
-            app.core,
-            app.widgets
-        ],
-        app.layout --> [
-            app.core
-        ],
-        app.widgets,
-		app.core --> [
-			ngAnimate,
-			ngSanitize,
-			ui.router,
-			blocks.exception,
-			blocks.logger,
-			blocks.router
-		]
-    ]
-```
-
 #### core Module
-Core modules are ones that are shared throughout the entire application and may be customized for the specific application. Example might be common data services.
+Core modules are ones that are shared throughout the entire application and may be 
+customized for the specific application. Example might be common data services.
 
-This is an aggregator of modules that the application will need. The `core` module takes the blocks, common, and Angular sub-modules as dependencies.
+This is an aggregator of modules that the application will need. The `core` module 
+takes the blocks, common, and Angular sub-modules as dependencies.
 
 #### blocks Modules
 Block modules are reusable blocks of code that can be used across projects simply by including them as dependencies.
@@ -90,7 +67,6 @@ The `blocks.router` module contains a routing helper module that assists in addi
 
 
 ## All Gulp Tasks
------
 
 ### Task Listing
 
@@ -248,6 +224,5 @@ The `blocks.router` module contains a routing helper module that assists in addi
     --ver=1.2.3 // specific version
 
 ## License
------
 
 MIT
